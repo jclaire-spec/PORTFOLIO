@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="mediaqueries.css" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; /* Ensure correct box model */
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        p {
+            color: rgb(85, 85, 85);
+        }
+
+        /* TRANSITION */
+
+        a,
+        .btn {
+            transition: all 300ms ease;
+        }
+
+        /* DESKTOP NAV */
+
+        nav,
+        .nav-links {
+            display: flex;
+        }
+
+        nav {
+            justify-content: space-around;
+            align-items: center;
+            height: 17vh;
+        }
+
+        .nav-links {
+            gap: 2rem;
+            list-style: none;
+            font-size: 1.5rem;
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+            text-decoration-color: white;
+        }
+
+        a:hover {
+            color: grey;
+            text-decoration: underline;
+            text-underline-offset: 1rem;
+            text-decoration-color: rgb(5, 96, 20);
+        }
+
+        .logo {
+            font-size: 2rem;
+            background-color: #F1C93B;
+            height: 25px;
+        }
+
+        span{
+          font-weight: bolder;
+          color: #1A5D1A;
+          text-decoration: underline;
+        }
+
+        section {
+            padding-top: 4vh;
+            height: 96vh;
+            margin: 0 10rem;
+            min-height: fit-content;
+        }
+
+        .section-container {
+            display: flex;
+            gap: 4rem;
+            height: 80%;
+        }
+
+        /* PROFILE SECTION */
+
+        #profile {
+            display: flex;
+            justify-content: center;
+            gap: 5rem;
+            height: 80vh;
+        }
+
+        .section__pic-container {
+            display: flex;
+            height: 400px;
+            width: 400px;
+        }
+
+        .rounded-image {
+          border-radius: 50%;
+          margin: 50px 0 0 40px;
+          width: 400px; 
+          height: 400px;
+        }
+
+        .section__text {
+            align-self: center;
+            text-align: center;
+        }
+
+        .section__text p {
+            font-weight: 600;
+        }
+
+        .section__text__p1 {
+            text-align: center;
+        }
+
+        .section__text__p2 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            background-color: #F1C93B;
+            height: 20px;
+        }
+
+        .title {
+            font-size: 3rem;
+            text-align: center;
+        }
+
+        .socials-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+            gap: 1rem;
+            font-size: 30px;
+        }
+
+        /* ABOUT SECTION */
+
+        #about {
+            position: relative;
+            margin-top: 70px;
+        }
+
+        .about-containers {
+            gap: 1rem;
+            margin-bottom: 2rem;
+            margin-top: 2rem;
+        }
+
+        .about-details-container {
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .about-containers,
+        .about-details-container {
+            display: flex;
+        }
+
+        .about-pic {
+            border-radius: 10rem;
+            margin-top: 40px;
+        }
+
+        .details-container {
+            padding: 1.5rem;
+            flex: 1;
+            background: white;
+            border-radius: 2rem;
+            text-align: center;
+            border: #F1C93B 0.1rem solid;
+        }
+
+        .text-container {
+          font-size: 15px;
+        }
+
+        /* EXPERIENCE SECTION */
+
+        #experience {
+            position: relative;
+            margin-top: 70px;
+        }
+
+        .experience-sub-title {
+            color: rgb(85, 85, 85);
+            font-weight: 600;
+            font-size: 1.75rem;
+            margin-bottom: 2rem;
+        }
+
+        .experience-details-container {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .article-container {
+            display: flex;
+            text-align: initial;
+            flex-wrap: wrap;
+            flex-direction: row;
+            gap: 2.5rem;
+            justify-content: space-around;
+        }
+
+        .icon-container {
+            width: 50px; /* Adjust the width as needed */
+            text-align: center;
+        }
+
+        .icon-container i {
+            font-size: 20px; /* Adjust the font size as needed */
+            color: #1A5D1A; /* Adjust the color as needed */
+        }
+
+        article {
+            display: flex;
+            width: 10rem;
+            justify-content: space-around;
+        }
+
+        /* CONTACT */
+
+        #contact {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            height: 70vh;
+        }
+
+        .contact-info-upper-container {
+            display: flex;
+            justify-content: center;
+            border-radius: 2rem;
+            border: rgb(53, 53, 53) 0.1rem solid;
+            border-color: rgb(163, 163, 163);
+            background: rgb(250, 250, 250); /* Fix background color */
+            margin: 2rem auto;
+            padding: 0.5rem;
+        }
+
+        .contact-info-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin: 1rem;
+        }
+
+        .contact-info-container p {
+            font-size: larger;
+        }
+
+        .contact-icon {
+            cursor: default;
+        }
+
+        .email-icon {
+            height: 2.5rem;
+        }
+
+        /* FOOTER SECTION */
+
+        footer {
+            height: 26vh;
+            margin: 0 1rem;
+        }
+
+        footer p {
+            text-align: center;
+        }
+    </style>
+    <script src="https://kit.fontawesome.com/187d3b140a.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <nav id="desktop-nav">
+      <div class="logo">Jecca Claire</div>
+      <div>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <section id="profile">
+      <div class="section__pic-container">
+        <img src="./img/prof1.jpg" alt="My Profile" class="rounded-image"/>
+      </div>
+      <div class="section__text">
+        <p class="section__text__p1">Hello, I'm</p>
+        <h1 class="title">Jecca Claire</h1>
+        <p class="section__text__p2">IT Student</p>
+        <div class="socials-container">
+          <a href="https://www.facebook.com/clrpprdlrd"><i class="fa-brands fa-facebook"></i></a>
+          <a href="https://github.com/jclaire-spec"><i class="fa-brands fa-github"></i></a>
+        </div>
+      </div>
+    </section>
+    <section id="about">
+      <p class="section__text__p1">Get To Know More</p>
+      <h1 class="title">About Me</h1>
+      <div class="section-container">
+        <div class="section__pic-container">
+          <img src="./img/prof2.jpg" alt="Profile picture"class="about-pic"/>
+        </div>
+        <div class="about-details-container">
+          <div class="about-containers">
+            <div class="details-container">
+              <i class="fa-solid fa-star"></i>
+              <h3>Experience</h3>
+              <p>2 years <br/>Frontend Developer</p>
+            </div>
+            <div class="details-container">
+              <i class="fa-solid fa-person"></i>
+              <h3>Education</h3>
+              <p>B.Sc. in Information Technology</p>
+            </div>
+          </div>
+          <div class="text-container">
+            <p>
+              Hello, I'm <span>Jecca Claire B. Pepe</span>, a second-year IT student from Our Lady of Fatima University 
+              and the Team Leader at TECHNOSIX. My journey in the world of information technology began when 
+              I embarked on my IT education, delving into a multitude of programming languages. Through this 
+              process, I've gained a profound understanding of this field. This educational path has instilled 
+              in me a sense of independence and a strong commitment to efficient time management to excel in my 
+              roles. During my first year, I had the privilege of serving as a Technical Leader and Frontend 
+              Developer. Now, in my second year, I am proud to lead the TECHNOSIX team while continuing my work 
+              as a Frontend Developer. While my skills may still be in the early stages of development, I approach 
+              challenges with confidence and determination, constantly striving for improvement.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="experience">
+      <p class="section__text__p1">Explore My</p>
+      <h1 class="title">Experience</h1>
+      <div class="experience-details-container">
+        <div class="about-containers">
+          <div class="details-container">
+            <h2 class="experience-sub-title">Frontend Development</h2>
+            <div class="article-container">
+              <article>
+                <div class="icon-container">
+                <i class="fa-regular fa-square-check"></i>
+              </div>
+                <div>
+                  <h3>HTML</h3>
+                  <p>Experienced</p>
+                </div>
+              </article>
+              <article>
+                <div class="icon-container">
+                <i class="fa-regular fa-square-check"></i>
+              </div>
+                <div>
+                  <h3>CSS</h3>
+                  <p>Experienced</p>
+                </div>
+              </article>
+              <article>
+                <div class="icon-container">
+                <i class="fa-regular fa-square-check"></i>
+              </div>
+                <div>
+                  <h3>PHP</h3>
+                  <p>Basic</p>
+                </div>
+              </article>
+              <article>
+                <div class="icon-container">
+                <i class="fa-regular fa-square-check"></i>
+              </div>
+                <div>
+                  <h3>JavaScript</h3>
+                  <p>Basic</p>
+                </div>
+              </article>
+            </div>
+          </div>
+          <div class="details-container">
+            <h2 class="experience-sub-title">Leadership</h2>
+            <div class="article-container">
+              <article>
+                <div class="icon-container">
+                <i class="fa-regular fa-square-check"></i>
+              </div>
+                <div>
+                  <h3>Team Leader</h3>
+                  <p>Experienced</p>
+                </div>
+              </article>
+              <article>
+                <div class="icon-container">
+                <i class="fa-regular fa-square-check"></i>
+              </div>
+                <div>
+                  <h3>Frontend Developer</h3>
+                  <p>Experienced</p>
+                </div>
+              </article>
+              <article>
+                <div class="icon-container">
+                <i class="fa-regular fa-square-check"></i>
+              </div>
+                <div>
+                  <h3>Backend Developer</h3>
+                  <p>Basic</p>
+                </div>
+              </article>
+              <article>
+                <div class="icon-container">
+                <i class="fa-regular fa-square-check"></i>
+              </div>
+                <div>
+                  <h3>UX/UI Designer</h3>
+                  <p>Basic</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <p class="section__text__p1">Get in Touch</p>
+      <h1 class="title">Contact Me</h1>
+      <div class="contact-info-upper-container">
+        <div class="contact-info-container">
+          <i class="fa-solid fa-envelope"></i>
+          <p><a href="mailto:examplemail@gmail.com">claireppdkrlrd@gmail.com</a></p>
+        </div>
+        <div class="contact-info-container">
+          <a href="https://www.instagram.com/clrbpp_/"><i class="fa-brands fa-instagram"></i></a>
+          <p><a href="https://www.linkedin.com">Instagram</a></p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>Copyright &#169; 2023 Jecca Claire. All Rights Reserved.</p>
+    </footer>
+  </body>
+</html>
